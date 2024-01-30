@@ -11,18 +11,27 @@
 3. 중복된 Data를 저장하지 못합니다.
 	예)로또 번호 6개를 중복 되지 않게 하는 프로그램시 이용
 */
+
+
 package ex_15_5_HashSet;
 import java.util.*;
-class HashSet_Lotto {
+class HashSet2_Generics_Lotto2_treeset_Array {
 	public static void main(String args[]) {
+		
 		TreeSet<Integer> set = new TreeSet<Integer>();
-				
-		while (set.size() < 6) {
-			int Lotto = (int) (Math.random()*45 + 1); 
-			set.add(Lotto); // auto Boxing 개념이 들어감
+		
+		while(set.size() < 6) {
+			int num = (int) (Math.random() * 45) + 1;
+			set.add(num);
 		}
-
+		
 		System.out.println(set);
-
+		
+		// TreeSet을 배열로 변환
+		Integer[] array = set.toArray(new Integer[set.size()]);
+		
+		// 배열 출력
+		System.out.println(Arrays.toString(array));
 	}
+
 }
